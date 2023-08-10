@@ -1,0 +1,47 @@
+create database mydb;
+
+use mydb;
+create TABLE student(
+    userid varchar(45),
+    passwd varchar(45),
+    nam varchar(45),
+    rollno varchar(15),
+    gender varchar(15),
+    phoneno int(15),
+    email varchar(45),
+    primary key(userid)
+    );
+
+
+
+
+CREATE TABLE faculty(
+    userid varchar(45),
+    passwd varchar(45),
+    nam varchar(45),
+    phoneno int(20),
+    primary key(userid)
+);
+
+
+
+
+CREATE TABLE admin (
+    userid int(45),
+    passwd varchar(45),
+    nam varchar(255)
+);
+    
+    create table booking(
+    guesthousename varchar(255),
+    checkin date,
+    checkout date,
+    no_of_persons int(20), 
+    stat varchar(45),
+    no_of_rooms int(15),
+    mobile int(15),
+    student_userid varchar(45),
+    faculty_userid varchar(45),
+    foreign key(student_userid) references student(userid),
+    foreign key(faculty_userid) references faculty(userid)
+    );
